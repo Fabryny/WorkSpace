@@ -8,8 +8,9 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { LoginModule } from './modules/login/login.module';
 import { PagesModule } from './modules/pages/pages.module';
+import { FbzTimerModule } from './shared/lib/components/fbz-timer/fbz-timer.module';
+import { TimerService } from './shared/lib/components/fbz-timer/timer.service';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA81cAHCnScsr0uVHnQFZiJhX-obFd80o8",
@@ -29,17 +30,14 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-    //Componentes
-    LoginModule,
     PagesModule,
-
+    FbzTimerModule,
     
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
   ],
-  providers: [],
+  providers: [TimerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

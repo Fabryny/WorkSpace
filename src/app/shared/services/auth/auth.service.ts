@@ -18,7 +18,7 @@ export class AuthService {
       const credencial = await this.auth.signInWithEmailAndPassword(email, senha);
 
       this.usuario = credencial.user
-      this.logadoEvent.emit()
+      this.logadoEvent.emit();
     } catch (error) {
       this.error = error;
     }
@@ -30,6 +30,7 @@ export class AuthService {
       const provider = new firebase.auth.GoogleAuthProvider();
       const credencial = await this.auth.signInWithPopup(provider);
       this.usuario = credencial.user;
+      this.logadoEvent.emit();
     } catch(error){
       this.error = error
     }

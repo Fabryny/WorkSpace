@@ -1,0 +1,12 @@
+<div class="timer-display">
+    <p>{{ hours | number: '2.0-0' }} : {{ minutes | number: '2.0-0' }} : {{ seconds | number: '2.0-0' }}</p>
+    <button  (click)="startTimer()">play</button>
+    <button (click)="pauseTimer()">pause</button>
+    <button (click)="stopTimer()" type="button">stop</button>
+</div>
+
+
+
+<!-- <app-registrar-tempo [timerID]="timerID" *ngIf="exibirDialog" (fecharModalEvent)="exibirDialog = false"></app-registrar-tempo> -->
+
+<!-- //CRIAR CONTROLLER TIRAR INPUT -->

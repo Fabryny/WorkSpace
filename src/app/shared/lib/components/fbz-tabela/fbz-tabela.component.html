@@ -1,0 +1,20 @@
+<div class="table-container">
+    <div></div>
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th *ngFor="let col of colunas"><div>{{col.nome}}</div></th>
+          <th><div>Ações</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dado of dados">
+            <!-- <div *ngFor="let col of colunas">
+
+            </div> -->
+          <td *ngFor="let col of colunas">{{dado | celula:col}}</td>
+          <td><button *ngFor="let acao of acoes" [disabled]="acao.disabled" button (click)="acaoFn(acao, dado)">{{acao.label}}</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

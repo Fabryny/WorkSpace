@@ -1,0 +1,16 @@
+<app-fbz-form-itens (dadoAdicionadoEvent)="add($event)" [acoes]="acoesTabela" [form]="meuFormulario"
+    [colunasTabela]="colunasTabela" [itens]="dadosTabela">
+    <form form [formGroup]="meuFormulario">
+        <div>
+            <label>Atividade</label>
+            <input type="text" formControlName="atividade">
+        </div>
+    </form>
+    <div listItens>
+        <app-fbz-tabela [acoes]="acoesTabela" [colunas]="colunasTabela" [dados]="dadosTabela">
+        </app-fbz-tabela>
+    </div>
+</app-fbz-form-itens>
+
+
+<app-fbz-timer ></app-fbz-timer>
